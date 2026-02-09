@@ -1,6 +1,8 @@
 .home {
   .banner {
-    .banner-image-wrapper-1 {
+    margin-block-end: 4rem;
+
+    .banner-image-wrapper {
       position: relative;
 
       block-size: clamp(20rem, calc(12.5rem + 27.5vw), 42rem);

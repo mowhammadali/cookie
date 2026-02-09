@@ -8,6 +8,8 @@
 
   padding: 0.6rem 1rem;
 
+  inline-size: fit-content;
+
   color: var(--text-primary);
   background-color: var(--orange-400);
 
