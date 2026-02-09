@@ -6,12 +6,20 @@
   block-size: 100dvh;
   inline-size: 14rem;
 
-  border-inline-end: 1px solid hsla(0 0% 67.8% / 0.3);
+  border-inline-end: 1px solid var(--border-color-1);
+
+  &.shrinked {
+    inline-size: 6rem;
+  }
 
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &.shrinked {
+      justify-content: center;
+    }
 
     .logo-section {
       display: flex;
@@ -23,26 +31,16 @@
       }
     }
 
-    .left-icon-section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 0.2rem;
-
-      border-radius: 0.5rem;
-
-      cursor: pointer;
+    .left-icon {
+      color: var(--text-tertiary);
+      font-size: 1.8rem;
 
       transition: background-color 0.2s;
+      cursor: pointer;
+      border-radius: 0.5rem;
 
       &:hover {
         background-color: var(--bg-surface-1);
-      }
-
-      .left-icon {
-        color: var(--text-tertiary);
-        font-size: 1.5rem;
       }
     }
   }

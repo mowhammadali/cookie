@@ -31,6 +31,10 @@ body {
   > * {
     padding: 2rem 1rem;
   }
+
+  &.shrinked {
+    grid-template-columns: 6rem 1fr;
+  }
 }
 
 a {

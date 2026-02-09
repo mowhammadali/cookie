@@ -1,23 +1,47 @@
-import { type ReactNode } from "react";
+"use client";
+
+import { type ReactNode, useEffect } from "react";
 import styles from "./sidebar.module.css";
 import Image from "next/image";
 import logoImage from "@/assets/images/cookie-32x32.png";
 import MingcuteLeftLine from "@/icons/MingcuteLeftLine";
+import MingcuteRightLine from "@/icons/MingcuteRightLine";
+import clsx from "clsx";
+import { useSidebarStore } from "@/stores/useSidebarStore";
 
 export default function Sidebar(): ReactNode {
+  const isOpen = useSidebarStore((state) => state.isOpen);
+  const toggleSidebar = useSidebarStore((state) => state.toggle);
+
+  const handleToggleSidebar = (): void => {
+    toggleSidebar();
+  };
+
+  useEffect(() => {
+    document.body.classList.toggle("shrinked", !isOpen);
+  }, [isOpen]);
+
   return (
-    <div className={styles.sidebar}>
-      <header className={styles.header}>
-        <section className={styles["logo-section"]}>
-          <p>Cookie</p>
-          <Image src={logoImage} alt="logo" />
-        </section>
-        <section className={styles["left-icon-section"]}>
+    <div className={clsx(styles.sidebar, !isOpen && styles.shrinked)}>
+      <header className={clsx(styles.header, !isOpen && styles.shrinked)}>
+        {isOpen && (
+          <section className={styles["logo-section"]}>
+            <p>Cookie</p>
+            <Image src={logoImage} alt="logo" />
+          </section>
+        )}
+
+        {isOpen ? (
           <MingcuteLeftLine
-            color="var(--text-tertiary)"
+            onClick={handleToggleSidebar}
             className={styles["left-icon"]}
           />
-        </section>
+        ) : (
+          <MingcuteRightLine
+            onClick={handleToggleSidebar}
+            className={styles["left-icon"]}
+          />
+        )}
       </header>
     </div>
   );
