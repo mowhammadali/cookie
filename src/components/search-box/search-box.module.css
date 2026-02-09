@@ -1,0 +1,33 @@
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  block-size: 2.5rem;
+
+  .search-filed {
+    block-size: 100%;
+
+    inline-size: clamp(12rem, calc(10rem + 10vw), 20rem);
+
+    padding-inline: 0.8rem;
+
+    outline: none;
+    border: none;
+    border-radius: 1.2rem;
+
+    background-color: var(--bg-surface-1);
+  }
+
+  button {
+    block-size: 100%;
+    inline-size: 2.5rem;
+
+    border: none;
+    border-radius: 100%;
+
+    cursor: pointer;
+
+    background-color: var(--bg-surface-1);
+  }
+}

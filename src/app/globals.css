@@ -43,6 +43,7 @@ select,
 button,
 a,
 label {
+  background-color: inherit;
   color: inherit;
   font: inherit;
 }
