@@ -1,0 +1,13 @@
+.home {
+  .banner {
+    .banner-image-wrapper-1 {
+      position: relative;
+
+      block-size: clamp(20rem, calc(12.5rem + 27.5vw), 42rem);
+      inline-size: 100%;
+
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+  }
+}
