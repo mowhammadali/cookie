@@ -15,6 +15,8 @@
 
   &.shrinked {
     inline-size: 6rem;
+
+    align-items: center;
   }
 
   .header {
@@ -63,6 +65,10 @@
         display: flex;
         align-items: center;
         gap: 0.6rem;
+
+        .link-icon {
+          font-size: 1.2rem;
+        }
       }
     }
   }

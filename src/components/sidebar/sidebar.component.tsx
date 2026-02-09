@@ -18,6 +18,11 @@ export default function Sidebar(): ReactNode {
   const isOpen = useSidebarStore((state) => state.isOpen);
   const toggleSidebar = useSidebarStore((state) => state.toggle);
 
+  const links = [
+    { id: 1, title: "Home", href: "/", icon: MingcuteHome3Fill },
+    { id: 2, title: "Users", href: "/users", icon: LucideUsers },
+  ];
+
   const handleToggleSidebar = (): void => {
     toggleSidebar();
   };
@@ -50,21 +55,17 @@ export default function Sidebar(): ReactNode {
       </header>
       <Button variant="primary" className={styles["sign-in-button"]}>
         <LucideLogIn />
-        Sign In
+        {isOpen && "Sign In"}
       </Button>
       <ul>
-        <li>
-          <Link href="/" className={styles.link}>
-            <MingcuteHome3Fill />
-            Home
-          </Link>
-        </li>{" "}
-        <li>
-          <Link href="/" className={styles.link}>
-            <LucideUsers />
-            Users
-          </Link>
-        </li>
+        {links.map((link) => (
+          <li key={link.id}>
+            <Link href={link.href} className={styles.link}>
+              <link.icon className={clsx(!isOpen && styles["link-icon"])} />
+              {isOpen && link.title}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
