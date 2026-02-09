@@ -55,3 +55,13 @@ label {
   color: inherit;
   font: inherit;
 }
+
+@media (max-width: 992px) {
+  body {
+    grid-template-columns: 1fr;
+
+    &.shrinked {
+      grid-template-columns: 1fr;
+    }
+  }
+}

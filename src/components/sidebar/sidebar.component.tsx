@@ -53,7 +53,7 @@ export default function Sidebar(): ReactNode {
           />
         )}
       </header>
-      <Button variant="primary" className={styles["sign-in-button"]}>
+      <Button variant="primary">
         <LucideLogIn />
         {isOpen && "Sign In"}
       </Button>

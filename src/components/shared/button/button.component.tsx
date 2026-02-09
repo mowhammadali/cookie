@@ -10,14 +10,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    {
-      children,
-      variant = "primary",
-      loading = false,
-      disabled,
-      className,
-      ...rest
-    },
+    { children, variant, loading = false, disabled, className, ...rest },
     ref,
   ): React.JSX.Element => {
     return (
