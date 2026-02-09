@@ -9,6 +9,12 @@ export default function Home(): ReactNode {
     <div className={styles.home}>
       <div className={styles.banner}>
         <section className={styles["banner-image-wrapper"]}>
+          <div className={styles.overlay}></div>
+          <h1>Cook Something Amazing Today</h1>
+          <p>
+            Browse a collection of sweet and savory recipes, baking inspiration,
+            and comforting homemade dishes crafted for every food lover.
+          </p>
           <Image
             src={bnannerImage}
             alt=""

@@ -1,4 +1,6 @@
 .home {
+  padding-block-end: 2rem;
+
   .banner {
     margin-block-end: 4rem;
 
@@ -10,6 +12,46 @@
 
       border-radius: 1rem;
       overflow: hidden;
+
+      .overlay {
+        block-size: 100%;
+        inline-size: 100%;
+
+        position: absolute;
+
+        z-index: 3;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.3),
+          transparent
+        );
+      }
+
+      h1 {
+        z-index: 2;
+
+        position: absolute;
+        inset-block-start: 3rem;
+        inset-inline-start: 3rem;
+
+        font-size: clamp(1rem, 0.619rem + 1.9048vw, 3rem);
+        font-weight: 800;
+      }
+
+      p {
+        z-index: 2;
+        position: absolute;
+        inset-block-start: 10rem;
+        inset-inline-start: 3rem;
+
+        max-inline-size: 22ch;
+        text-wrap: wrap;
+
+        font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2.5rem);
+        font-weight: 800;
+      }
     }
   }
 }
