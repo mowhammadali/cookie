@@ -4,5 +4,46 @@
   inset-inline-start: 0;
 
   block-size: 100dvh;
-  inline-size: 12.5rem;
+  inline-size: 14rem;
+
+  border-inline-end: 1px solid hsla(0 0% 67.8% / 0.3);
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    .left-icon-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0.2rem;
+
+      border-radius: 0.5rem;
+
+      cursor: pointer;
+
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: var(--bg-surface-1);
+      }
+
+      .left-icon {
+        color: var(--text-tertiary);
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
