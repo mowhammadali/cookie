@@ -10,7 +10,7 @@ export default function Navbar(): ReactNode {
   return (
     <div className={styles.navbar}>
       <SearchBox />
-      <Button className={styles["sign-in-button"]}>
+      <Button variant="primary" className={styles["sign-in-button"]}>
         <LucideLogIn />
         Sign In
       </Button>

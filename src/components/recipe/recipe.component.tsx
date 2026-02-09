@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./recipe.module.css";
 import { type RecipeType } from "@/components/recipes/recipes.component";
 import MingcuteStarFill from "@/icons/MingcuteStarFill";
@@ -9,7 +10,7 @@ import Button from "@/components/shared/button/button.component";
 
 export default function Recipe(props: RecipeType): ReactNode {
   return (
-    <div className={styles.recipe}>
+    <article className={styles.recipe}>
       <div className={styles["recipe-image-wrapper"]}>
         <Image
           src={props.image}
@@ -33,7 +34,9 @@ export default function Recipe(props: RecipeType): ReactNode {
         <p>Cook Time in Minutes: </p>
         {props.cookTimeMinutes}
       </div>
-      <Button>Show recipe</Button>
-    </div>
+      <Button>
+        <Link href={`/recipe/${props.id}`}>Show Recipe</Link>
+      </Button>
+    </article>
   );
 }
