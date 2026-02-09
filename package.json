@@ -11,13 +11,8 @@
     "lint:check": "eslint .",
     "prettier:fix": "prettier . --write",
     "prettier:check": "prettier . --check",
-    "prepare": "husky"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint .",
-      "prettier . --check"
-    ]
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "next": "15.5.6",
