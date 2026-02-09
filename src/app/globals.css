@@ -1,3 +1,8 @@
+:root {
+  --full-width: 75rem;
+  --full-width-padding-inline: calc(max(100% - var(--full-width), 2rem) / 2);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,13 +16,33 @@ body {
 }
 
 body {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  min-block-size: 100dvh;
+
+  > * {
+    padding: 2rem 1rem;
+  }
+
+  &.shrinked {
+    grid-template-columns: 6rem 1fr;
+  }
 }
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 input,
@@ -26,6 +51,7 @@ select,
 button,
 a,
 label {
+  background-color: inherit;
   color: inherit;
   font: inherit;
 }

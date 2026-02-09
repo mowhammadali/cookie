@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import { type Metadata } from "next";
 import { Geist, Roboto } from "next/font/google";
 import "@/styles/colors.css";
 import "./globals.css";
 import { type ReactNode } from "react";
 import clsx from "clsx";
+import Main from "@/components/main/main.component";
+import Sidebar from "@/components/sidebar/sidebar.component";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(roboto.variable, geistSans.variable)}>
-        {children}
+        <Sidebar />
+        <Main>{children}</Main>
       </body>
     </html>
   );

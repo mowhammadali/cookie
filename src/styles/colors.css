@@ -64,8 +64,21 @@
   --yellow-800: hsl(45, 100%, 15%);
   --yellow-900: hsl(45, 100%, 10%);
 
-  --color-delete: var(--red-500);
-  --color-success: var(--green-500);
-  --color-warning: var(--yellow-500);
-  --color-info: var(--blue-500);
+  --orange-50: hsl(24, 100%, 95%);
+  --orange-100: hsl(24, 100%, 90%);
+  --orange-200: hsl(24, 100%, 80%);
+  --orange-300: hsl(24, 100%, 70%);
+  --orange-400: hsl(24, 100%, 60%);
+  --orange-500: hsl(24, 100%, 50%);
+  --orange-600: hsl(24, 100%, 45%);
+  --orange-700: hsl(24, 100%, 40%);
+  --orange-800: hsl(24, 100%, 30%);
+  --orange-900: hsl(24, 100%, 20%);
+
+  --color-delete: var(--red-400);
+  --color-success: var(--green-400);
+  --color-warning: var(--yellow-400);
+  --color-info: var(--blue-400);
+
+  --border-color-1: hsla(0 0% 67.8% / 0.3);
 }

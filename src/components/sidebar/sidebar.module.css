@@ -1,0 +1,75 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+
+  position: sticky;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+
+  block-size: 100dvh;
+  inline-size: 14rem;
+
+  border-inline-end: 1px solid var(--border-color-1);
+
+  &.shrinked {
+    inline-size: 6rem;
+
+    align-items: center;
+  }
+
+  .header {
+    inline-size: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &.shrinked {
+      justify-content: center;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    .left-icon {
+      color: var(--text-tertiary);
+      font-size: 1.8rem;
+
+      transition: background-color 0.2s;
+      cursor: pointer;
+      border-radius: 0.5rem;
+
+      &:hover {
+        background-color: var(--bg-surface-1);
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    li {
+      .link {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+        .link-icon {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
