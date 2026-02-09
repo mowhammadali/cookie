@@ -1,8 +1,34 @@
 .navbar {
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
 
   inline-size: 100%;
 
   padding-block-end: 2rem;
+
+  .logo-section {
+    display: none;
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .sign-in-button {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .navbar .sign-in-button {
+    display: flex;
+  }
 }
