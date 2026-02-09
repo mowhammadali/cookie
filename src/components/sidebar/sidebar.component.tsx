@@ -2,11 +2,14 @@
 
 import { type ReactNode, useEffect } from "react";
 import styles from "./sidebar.module.css";
+import Link from "next/link";
 import Image from "next/image";
 import logoImage from "@/assets/images/cookie-32x32.png";
 import MingcuteLeftLine from "@/icons/MingcuteLeftLine";
 import MingcuteRightLine from "@/icons/MingcuteRightLine";
 import LucideLogIn from "@/icons/LucideLogIn";
+import MingcuteHome3Fill from "@/icons/MingcuteHome3Fill";
+import LucideUsers from "@/icons/LucideUsers";
 import clsx from "clsx";
 import Button from "@/components/shared/button/button.component";
 import { useSidebarStore } from "@/stores/useSidebarStore";
@@ -49,6 +52,20 @@ export default function Sidebar(): ReactNode {
         <LucideLogIn />
         Sign In
       </Button>
+      <ul>
+        <li>
+          <Link href="/" className={styles.link}>
+            <MingcuteHome3Fill />
+            Home
+          </Link>
+        </li>{" "}
+        <li>
+          <Link href="/" className={styles.link}>
+            <LucideUsers />
+            Users
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }
