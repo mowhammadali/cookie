@@ -1,0 +1,36 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  padding: 0.6rem 1rem;
+
+  color: var(--text-primary);
+  background-color: var(--orange-400);
+
+  cursor: pointer;
+
+  &.primary {
+    color: var(--bg-base);
+    background-color: var(--text-primary);
+  }
+
+  &.danger {
+    background-color: var(--color-delete);
+  }
+
+  &.info {
+    background-color: var(--color-info);
+  }
+
+  &.warning {
+    background-color: var(--color-warning);
+  }
+
+  &.success {
+    background-color: var(--color-success);
+  }
+}

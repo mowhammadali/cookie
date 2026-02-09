@@ -6,7 +6,9 @@ import Image from "next/image";
 import logoImage from "@/assets/images/cookie-32x32.png";
 import MingcuteLeftLine from "@/icons/MingcuteLeftLine";
 import MingcuteRightLine from "@/icons/MingcuteRightLine";
+import LucideLogIn from "@/icons/LucideLogIn";
 import clsx from "clsx";
+import Button from "@/components/shared/button/button.component";
 import { useSidebarStore } from "@/stores/useSidebarStore";
 
 export default function Sidebar(): ReactNode {
@@ -43,6 +45,10 @@ export default function Sidebar(): ReactNode {
           />
         )}
       </header>
+      <Button variant="primary" className={styles["sign-in-button"]}>
+        <LucideLogIn />
+        Sign In
+      </Button>
     </div>
   );
 }
