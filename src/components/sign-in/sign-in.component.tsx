@@ -22,7 +22,7 @@ export default function SignIn(): ReactNode {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
     mode: "onChange",
@@ -45,6 +45,7 @@ export default function SignIn(): ReactNode {
             type="text"
             className={styles.field}
             placeholder="Username..."
+            disabled={isSubmitting}
             {...register("username")}
           />
           {errors.username && (
@@ -59,6 +60,7 @@ export default function SignIn(): ReactNode {
             type="text"
             className={styles.field}
             placeholder="Password..."
+            disabled={isSubmitting}
             {...register("password")}
           />
           {errors.password && (
@@ -67,7 +69,12 @@ export default function SignIn(): ReactNode {
             </div>
           )}
         </section>
-        <Button fill={true} type="submit">
+        <Button
+          fill={true}
+          type="submit"
+          loading={isSubmitting}
+          disabled={isSubmitting}
+        >
           Sign In
         </Button>
       </form>
