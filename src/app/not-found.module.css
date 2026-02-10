@@ -1,0 +1,12 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  block-size: 100%;
+  inline-size: 100%;
+
+  p {
+    font-size: clamp(1.5rem, 1.125rem + 1.875vw, 3rem);
+  }
+}
