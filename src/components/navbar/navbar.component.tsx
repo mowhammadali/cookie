@@ -8,6 +8,7 @@ import logoImage from "@/assets/images/cookie-32x32.png";
 import LucideLogIn from "@/icons/LucideLogIn";
 import Button from "@/components/shared/button/button.component";
 import Dialog from "@/components/dialog/dialog.component";
+import SignIn from "@/components/sign-in/sign-in.component";
 import { useModalStore } from "@/stores/useModalStore";
 
 export default function Navbar(): ReactNode {
@@ -30,7 +31,11 @@ export default function Navbar(): ReactNode {
         <p>Cookie</p>
         <Image src={logoImage} alt="logo" />
       </section>
-      {isModalOpen && <Dialog>Modal</Dialog>}
+      {isModalOpen && (
+        <Dialog>
+          <SignIn />
+        </Dialog>
+      )}
     </div>
   );
 }

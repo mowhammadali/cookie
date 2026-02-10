@@ -1,0 +1,55 @@
+.sign-in {
+  display: grid;
+  justify-items: center;
+  gap: 3rem;
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  form {
+    display: grid;
+    gap: 2.2rem;
+    inline-size: 100%;
+
+    .field-wrapper {
+      position: relative;
+
+      min-block-size: 2.5rem;
+
+      .field-icon {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 0.5rem;
+
+        transform: translate(0%, -50%);
+      }
+
+      input {
+        inline-size: 100%;
+        block-size: 100%;
+
+        outline: none;
+        border: 1px solid var(--border-color-1);
+        border-radius: 0.6rem;
+
+        padding-inline-start: 2rem;
+        padding-inline-end: 1rem;
+      }
+
+      .error-message {
+        color: var(--color-delete);
+
+        font-size: 0.8rem;
+
+        margin-block-start: 0.5rem;
+      }
+    }
+  }
+}
