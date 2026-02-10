@@ -8,6 +8,7 @@ import MingcuteUser2Fill from "@/icons/MingcuteUser2Fill";
 import MaterialSymbolsLockOpen from "@/icons/MaterialSymbolsLockOpen";
 import Button from "@/components/shared/button/button.component";
 import * as yup from "yup";
+import { signInService } from "@/services/auth/sign-in.api";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -26,10 +27,19 @@ export default function SignIn(): ReactNode {
   } = useForm<FormData>({
     resolver: yupResolver(schema),
     mode: "onChange",
+    defaultValues: {
+      username: "emilys",
+      password: "emilyspass",
+    },
   });
 
   const handleSubmitFrom = async function (data: FormData): Promise<void> {
-    console.log(data);
+    try {
+      const response = await signInService({ ...data, expiresInMins: 30 });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
