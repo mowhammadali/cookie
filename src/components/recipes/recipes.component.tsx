@@ -29,8 +29,8 @@ type RecipesResponseType = {
 };
 
 export default async function Recipes(): Promise<ReactNode> {
-  const data = await fetch("https://dummyjson.com/recipes", {
-    cache: "force-cache",
+  const data = await fetch("https://dummyjson.com/recipes?delay=1000", {
+    cache: "no-store",
   });
   const recipesResponse: RecipesResponseType = await data.json();
 

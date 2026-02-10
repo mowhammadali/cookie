@@ -1,10 +1,10 @@
 .home {
   padding-block-end: 2rem;
 
-  .banner {
+  .hero {
     margin-block-end: 4rem;
 
-    .banner-image-wrapper {
+    .hero-image-wrapper {
       position: relative;
 
       block-size: clamp(20rem, calc(12.5rem + 27.5vw), 42rem);

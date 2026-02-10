@@ -17,6 +17,7 @@ export default function Recipe(props: RecipeType): ReactNode {
           alt={props.name}
           fill
           style={{ objectFit: "cover" }}
+          loading="lazy"
         />
         <div className={styles.rating}>
           {props.rating}
