@@ -9,8 +9,6 @@ import MaterialSymbolsForkSpoonRounded from "@/icons/MaterialSymbolsForkSpoonRou
 import Button from "@/components/shared/button/button.component";
 
 export default function Recipe(props: RecipeType): ReactNode {
-  throw new Error("an error occurred");
-
   return (
     <article className={styles.recipe}>
       <div className={styles["recipe-image-wrapper"]}>
