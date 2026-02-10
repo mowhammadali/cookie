@@ -1,0 +1,42 @@
+.recipes-loading {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 16rem);
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 2rem;
+
+  inline-size: 100%;
+
+  .loading-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    block-size: auto;
+
+    .skeleton-wrapper {
+      block-size: 12rem;
+      inline-size: 100%;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .recipes-loading {
+    grid-template-columns: repeat(auto-fill, 22rem);
+
+    .recipes-loading .skeleton-wrapper {
+      block-size: 16rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .recipes-loading {
+    grid-template-columns: repeat(auto-fill, 100%);
+
+    .recipes-loading .skeleton-wrapper {
+      block-size: 22rem;
+    }
+  }
+}
