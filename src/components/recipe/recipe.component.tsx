@@ -1,8 +1,8 @@
 import { type ReactNode } from "react";
+import { type RecipeType } from "@/components/recipes/recipes.component";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./recipe.module.css";
-import { type RecipeType } from "@/components/recipes/recipes.component";
 import MingcuteStarFill from "@/icons/MingcuteStarFill";
 import MingcuteAlarm2Fill from "@/icons/MingcuteAlarm2Fill";
 import MaterialSymbolsForkSpoonRounded from "@/icons/MaterialSymbolsForkSpoonRounded";

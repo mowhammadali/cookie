@@ -15,7 +15,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ): React.JSX.Element => {
     return (
       <button
-        className={clsx(styles.button, styles[variant], className)}
+        className={clsx(styles.button, !!variant && styles[variant], className)}
         ref={ref}
         disabled={disabled || loading}
         {...rest}

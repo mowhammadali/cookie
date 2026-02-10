@@ -14,6 +14,8 @@
     border-radius: 0.8rem;
     overflow: hidden;
 
+    z-index: -1;
+
     .rating {
       position: absolute;
       inset-block-start: 0.5rem;
