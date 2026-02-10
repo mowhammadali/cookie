@@ -13,6 +13,8 @@
       border-radius: 1rem;
       overflow: hidden;
 
+      z-index: -1;
+
       .overlay {
         block-size: 100%;
         inline-size: 100%;

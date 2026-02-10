@@ -12,11 +12,14 @@ import MingcuteHome3Fill from "@/icons/MingcuteHome3Fill";
 import LucideUsers from "@/icons/LucideUsers";
 import clsx from "clsx";
 import Button from "@/components/shared/button/button.component";
+import { useModalStore } from "@/stores/useModalStore";
 import { useSidebarStore } from "@/stores/useSidebarStore";
 
 export default function Sidebar(): ReactNode {
-  const isOpen = useSidebarStore((state) => state.isOpen);
-  const toggleSidebar = useSidebarStore((state) => state.toggle);
+  const { isOpen: isSidebarOpen, toggle: toggleSidebar } = useSidebarStore(
+    (state) => state,
+  );
+  const { open: openModal } = useModalStore((state) => state);
 
   const links = [
     { id: 1, title: "Home", href: "/", icon: MingcuteHome3Fill },
@@ -28,20 +31,22 @@ export default function Sidebar(): ReactNode {
   };
 
   useEffect(() => {
-    document.body.classList.toggle("shrinked", !isOpen);
-  }, [isOpen]);
+    document.body.classList.toggle("shrinked", !isSidebarOpen);
+  }, [isSidebarOpen]);
 
   return (
-    <div className={clsx(styles.sidebar, !isOpen && styles.shrinked)}>
-      <header className={clsx(styles.header, !isOpen && styles.shrinked)}>
-        {isOpen && (
+    <div className={clsx(styles.sidebar, !isSidebarOpen && styles.shrinked)}>
+      <header
+        className={clsx(styles.header, !isSidebarOpen && styles.shrinked)}
+      >
+        {isSidebarOpen && (
           <section className={styles["logo-section"]}>
             <p>Cookie</p>
             <Image src={logoImage} alt="logo" />
           </section>
         )}
 
-        {isOpen ? (
+        {isSidebarOpen ? (
           <MingcuteLeftLine
             onClick={handleToggleSidebar}
             className={styles["left-icon"]}
@@ -53,16 +58,18 @@ export default function Sidebar(): ReactNode {
           />
         )}
       </header>
-      <Button variant="primary">
+      <Button variant="primary" onClick={() => openModal()}>
         <LucideLogIn />
-        {isOpen && "Sign In"}
+        {isSidebarOpen && "Sign In"}
       </Button>
       <ul>
         {links.map((link) => (
           <li key={link.id}>
             <Link href={link.href} className={styles.link}>
-              <link.icon className={clsx(!isOpen && styles["link-icon"])} />
-              {isOpen && link.title}
+              <link.icon
+                className={clsx(!isSidebarOpen && styles["link-icon"])}
+              />
+              {isSidebarOpen && link.title}
             </Link>
           </li>
         ))}
